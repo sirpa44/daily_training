@@ -1,9 +1,9 @@
 getAllUsers:
     path: /users
-    controller: App\Controller\DefaultController::getAllUsers
-    method: GET
+    controller: App\Controller\ApiController::getAllUsers
+    methods: GET
 
 getOneUserById:
    path: /user/{id}
-   controller: App\Controller\DefaultController::getOneUser
-   method: GET
+   controller: App\Controller\ApiController::getOneUser
+   methods: GET

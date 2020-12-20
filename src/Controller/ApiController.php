@@ -5,15 +5,17 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ApiController extends AbstractController
 {
+    
     /**
      * get all users
      */
-    public function getAllUser()
+    public function getAllUsers()
     {
-        
+        return new JsonResponse(null, Response::HTTP_OK);
     }
     
     /**
@@ -21,7 +23,7 @@ class ApiController extends AbstractController
      */
     public function getOneUser($id)
     {
-        
+        return new JsonResponse(null, Response::HTTP_OK);
     }
     
 }
