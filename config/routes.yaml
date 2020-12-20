@@ -1,3 +1,9 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+getAllUsers:
+    path: /users
+    controller: App\Controller\DefaultController::getAllUsers
+    method: GET
+
+getOneUserById:
+   path: /user/{id}
+   controller: App\Controller\DefaultController::getOneUser
+   method: GET
