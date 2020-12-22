@@ -5,24 +5,25 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class ApiController extends AbstractController
-{
-    
+{   
     /**
      * get all users
      */
-    public function getAllUsers()
+    public function getAllUsers(/** ?int $limit, ?int $offset*/Request $request): JsonResponse
     {
-        return new JsonResponse(null, Response::HTTP_OK);
+        $data = ['limit' => $request->query->get('limit'), 'offset' => $request->query->get('offset')];
+        return new JsonResponse($data, Response::HTTP_OK);
     }
     
     /**
      * get one user by id
      */
-    public function getOneUser($id)
+    public function getOneUser(int $id): JsonResponse
     {
-        return new JsonResponse(null, Response::HTTP_OK); 
+        return new JsonResponse(['id' => $id], Response::HTTP_OK); 
     }
     
 }
